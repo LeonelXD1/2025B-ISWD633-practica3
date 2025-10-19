@@ -1,3 +1,2 @@
 # COMPLETAR  
-Comparando sus conocimientos antes de hacer la práctica con sus conocimientos después de hacer la tarea, explicar los principales aprendizajes logrados para beneficio de su formación profesional.  
-Si solucionó un problema presentado o utilizó otros comandos que no se mencionan al realizar la práctica también se debe documentar.
+Aprendí que gracias a los volúmenes podemos dar persitencia a los datos, podemos guardar diferentes configuraciones que al eliminar el contenedor podemos recuperarla facilmente, esto se aprecia mejor cuando se realiza los ejercicios ya que podemos ver la utilidad de estos volumenes.
