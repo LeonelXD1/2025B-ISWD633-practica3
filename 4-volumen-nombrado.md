@@ -8,7 +8,9 @@ docker volume create <nombre volumen>
 ```
 
 ### Crear el volumen nombrado: vol-postgres
-# COMPLETAR CON EL COMANDO
+```
+docker volume create vol-postgres
+```
 
 ## MOUNTPOINT
 Un mountpoint se refiere al lugar en el sistema de archivos donde un dispositivo de almacenamiento se une (o monta) al sistema de archivos. Es el punto donde los archivos y directorios almacenados en ese dispositivo de almacenamiento son accesibles para el sistema operativo y las aplicaciones.
@@ -39,7 +41,9 @@ docker run -d --name <nombre contenedor> --mount type=volume,src=<nombre >,dst=<
 
 
 ### Crear la red net-drupal de tipo bridge
-# COMPLETAR CON EL COMANDO
+```
+docker network create net-drupal
+```
 
 ### Crear un servidor postgres vinculado a la red net-drupal, completar la ruta del contenedor
 ```
@@ -49,13 +53,18 @@ _No es necesario exponer el puerto, debido a que nos vamos a conectar desde la m
 
 ### Crear un cliente postgres vinculado a la red drupal a partir de la imagen dpage/pgadmin4, completar el correo
 ```
-docker run -d --name client-postgres --publish published=9500,target=80 -e PGADMIN_DEFAULT_PASSWORD=54321 -e PGADMIN_DEFAULT_EMAIL=<correo> --network net-drupal dpage/pgadmin4
+docker run -d --name client-postgres --publish published=9500,target=80 -e PGADMIN_DEFAULT_PASSWORD=54321 -e PGADMIN_DEFAULT_EMAIL=alessandro231r@gmail.com --network net-drupal dpage/pgadmin4
 ```
 
 ### Usar el cliente postgres para conectarse al servidor postgres, para la conexión usar el nombre del servidor en lugar de la dirección IP.
 
 ### Crear los volúmenes necesarios para drupal, esto se puede encontrar en la documentación
-### COMPLETAR CON LOS COMANDOS
+```
+docker volume create vol-modules
+docker volume create vol-profiles
+docker volume create vol-sites
+docker volume create vol-themes
+```
 
 ### Crear el contenedor server-drupal vinculado a la red, usar la imagen drupal, y vincularlo a los volúmenes nombrados
 ```
@@ -63,11 +72,14 @@ docker run -d --name server-drupal --publish published=9700,target=80 -v <nombre
 ```
 
 ### Ingrese al server-drupal y siga el paso a paso para la instalación.
-# COMPLETAR CON UNA CAPTURA DE PANTALLA DEL PASO 4
+
+<img width="594" height="598" alt="image" src="https://github.com/user-attachments/assets/ebf3553a-2133-44de-878c-0bc143bbcfd9" />
 
 _La instalación puede tomar varios minutos, mientras espera realice un diagrama de los contenedores que ha creado en este apartado._
 
-# COMPLETAR CON EL DIAGRAMA SOLICITADO
+<img width="837" height="614" alt="image" src="https://github.com/user-attachments/assets/10ea85dc-e097-4910-965b-4f5e77262c05" />
+
+
 
 ### Eliminar un volumen específico
 ```
